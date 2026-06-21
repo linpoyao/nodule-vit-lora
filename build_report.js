@@ -111,6 +111,7 @@ const doc = new Document({
       ]),
       p("", { spacing: { after: 60 } }),
       p("資料特性:影像為單通道灰階、值域 0–255、尺寸 28³（MNIST-like 最小版本）。測試集中良性樣本約為惡性的 4 倍，屬於典型的「類別不平衡」資料，這在後續方法與結果中都需特別處理。"),
+      ...img("fig_samples.png", 300, 550, "圖 1. NoduleMNIST3D 測試樣本（每列為一結節的三正交切片;上 3 列良性、下 3 列惡性）"),
 
       // ---- 3 ----
       h("3. 方法", HeadingLevel.HEADING_1),
@@ -156,8 +157,10 @@ const doc = new Document({
         ["malignant precision / recall", "0.64 / 0.70", "惡性"],
       ]),
       p("", { spacing: { after: 60 } }),
-      ...img("fig_training.png", 460, 276, "圖 1. 訓練過程:train loss 持續下降、val accuracy 大致穩定"),
-      ...img("fig_confusion.png", 360, 326, "圖 2. 測試集混淆矩陣（良性 221 正確、惡性 45 正確）"),
+      ...img("fig_training.png", 460, 276, "圖 2. 訓練過程:train loss 持續下降、val accuracy 大致穩定"),
+      ...img("fig_confusion.png", 360, 326, "圖 3. 測試集混淆矩陣（良性 221 正確、惡性 45 正確）"),
+      p("下圖為模型在測試樣本上的實際預測。模型對良性與明顯惡性結節判斷準確且高信心;主要失誤集中在較小、較不明顯的惡性結節，與惡性 recall 0.70 的量化結果一致。"),
+      ...img("fig_demo_predictions.png", 540, 280, "圖 4. 預測示範:上排良性、下排惡性（綠=答對、紅=答錯，括號為信心值）"),
 
       // ---- 6 ----
       h("6. 討論", HeadingLevel.HEADING_1),
