@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# 訓練輸出 / 模型權重
+vit_lora_nodule/
+*.safetensors
+
+# 下載的資料集快取
+*.npz
+.medmnist/
+
+# Node
+node_modules/
+
+# 轉檔暫存
+*.pdf
